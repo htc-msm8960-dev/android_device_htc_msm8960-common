@@ -15,6 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.mdpcomp.logs=0 \
     debug.sf.hw=1 \
+    debug.sf.disable_backpressure=1 \
     persist.hwc.mdpcomp.enable=true
 
 # Thermal
