@@ -47,12 +47,16 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.memtrack@1.0-impl \
+    android.hardware.graphics.memtrack@1.0-impl \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
     libgenlock \
     memtrack.msm8960
+
+# DRM HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -74,6 +78,10 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
+# Memtrack HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl
+
 # OMX
 PRODUCT_PACKAGES += \
     libOmxCore \
@@ -89,11 +97,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8960
 
+# Power HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
+
 # WiFi
 PRODUCT_PACKAGES += \
     hostapd \
-    hostapd.accept \
-    hostapd.deny \
-    hostapd_default.conf \
     wpa_supplicant \
     wpa_supplicant.conf
