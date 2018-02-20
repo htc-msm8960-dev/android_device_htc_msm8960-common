@@ -62,6 +62,12 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0-java
+
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
@@ -87,9 +93,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
 # Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    netutils-wrapper-1.0
+#PRODUCT_PACKAGES += \
+#    android.system.net.netd@1.0 \
+#    netutils-wrapper-1.0
 
 # OMX
 PRODUCT_PACKAGES += \
