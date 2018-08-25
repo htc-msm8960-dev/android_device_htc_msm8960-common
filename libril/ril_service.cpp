@@ -2032,7 +2032,7 @@ Return<void> RadioImpl::setInitialAttachApn(int32_t serial, const DataProfileInf
 
         if (!copyHidlStringToRil(&iaa.apn, dataProfileInfo.apn, pRI, true)) {
             return Void();
-         }
+        }
 
         const hidl_string &protocol =
                 (isRoaming ? dataProfileInfo.roamingProtocol : dataProfileInfo.protocol);
