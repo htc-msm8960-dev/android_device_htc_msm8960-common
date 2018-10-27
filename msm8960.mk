@@ -59,15 +59,12 @@ PRODUCT_PACKAGES += \
 
 # DRM HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-impl
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes \
-    libxml2 \
-    libcnefeatureconfig
+    ethertypes
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -89,9 +86,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
 
 # Net
-#PRODUCT_PACKAGES += \
-#    android.system.net.netd@1.0 \
-#    netutils-wrapper-1.0
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.0 \
+    netutils-wrapper-1.0
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -110,14 +107,7 @@ PRODUCT_PACKAGES += \
 
 # Power HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    android.hardware.power@1.1-service-qti
 
 # Thermal
 PRODUCT_PACKAGES += \
