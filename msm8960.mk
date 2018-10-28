@@ -59,7 +59,14 @@ PRODUCT_PACKAGES += \
 
 # DRM HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0-java
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
@@ -105,9 +112,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8960
 
-# Power HIDL interfaces
+# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
+    android.hardware.power@1.0-service-qti
 
 # Thermal
 PRODUCT_PACKAGES += \

@@ -24,6 +24,8 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
+PLATFORM_PATH := device/htc/msm8960-common
+
 BOARD_VENDOR := htc
 
 # Bootloader
@@ -50,12 +52,18 @@ BOARD_USES_ALSA_AUDIO := true
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# Bionic
+TARGET_ALLOWS_INVALID_PTHREAD := true
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -65,7 +73,10 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
-#HIDL
+# GCC
+TARGET_NEEDS_GCC_LIBC := true
+
+# HIDL
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 
 # Lights
