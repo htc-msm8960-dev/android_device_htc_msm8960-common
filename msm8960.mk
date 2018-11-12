@@ -61,7 +61,8 @@ PRODUCT_PACKAGES += \
 # DRM HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey
 
 # HIDL
 PRODUCT_PACKAGES += \
