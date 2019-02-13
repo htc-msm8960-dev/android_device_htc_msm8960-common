@@ -109,12 +109,12 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Power
-PRODUCT_PACKAGES += \
-    power.msm8960
+#PRODUCT_PACKAGES += \
+#    power.msm8960
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    android.hardware.power@1.1-service-qti
 
 # Thermal
 PRODUCT_PACKAGES += \
