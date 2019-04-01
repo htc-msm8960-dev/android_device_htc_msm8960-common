@@ -1,3 +1,6 @@
+#Bluetooth
+    ro.bt.bdaddr_path=/sys/module/htc_bdaddress/parameters/bdaddress
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
