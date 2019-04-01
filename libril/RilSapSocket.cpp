@@ -55,9 +55,10 @@ void RilSapSocket::sOnRequestComplete (RIL_Token t,
         sap_socket->onRequestComplete(t,e,response,responselen);
     } else {
         RLOGE("Invalid socket id");
-        if (request->curr) {
-            free(request->curr);
+        if (request->curr->payload) {
+            free(request->curr->payload);
         }
+        free(request->curr);
         free(request);
     }
 }
@@ -111,7 +112,7 @@ RilSapSocket *RilSapSocket::getSocketById(RIL_SOCKET_ID socketId) {
 }
 
 void RilSapSocket::initSapSocket(const char *socketName,
-        const RIL_RadioFunctions *uimFuncs) {
+        RIL_RadioFunctions *uimFuncs) {
 
     if (strcmp(socketName, RIL1_SERVICE_NAME) == 0) {
         if(!SocketExists(socketName)) {
@@ -145,7 +146,7 @@ void RilSapSocket::initSapSocket(const char *socketName,
 }
 
 void RilSapSocket::addSocketToList(const char *socketName, RIL_SOCKET_ID socketid,
-        const RIL_RadioFunctions *uimFuncs) {
+        RIL_RadioFunctions *uimFuncs) {
     RilSapSocket* socket = NULL;
     RilSapSocketList *current;
 
@@ -190,7 +191,7 @@ bool RilSapSocket::SocketExists(const char *socketName) {
 
 RilSapSocket::RilSapSocket(const char *socketName,
         RIL_SOCKET_ID socketId,
-        const RIL_RadioFunctions *inputUimFuncs):
+        RIL_RadioFunctions *inputUimFuncs):
         RilSocket(socketName, socketId) {
     if (inputUimFuncs) {
         uimFuncs = inputUimFuncs;
@@ -233,12 +234,6 @@ void RilSapSocket::dispatchRequest(MsgHeader *req) {
 void RilSapSocket::onRequestComplete(RIL_Token t, RIL_Errno e, void *response,
         size_t response_len) {
     SapSocketRequest* request= (SapSocketRequest*)t;
-
-    if (!request || !request->curr) {
-        RLOGE("RilSapSocket::onRequestComplete: request/request->curr is NULL");
-        return;
-    }
-
     MsgHeader *hdr = request->curr;
 
     MsgHeader rsp;
