@@ -1,4 +1,5 @@
-#Bluetooth
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/sys/module/htc_bdaddress/parameters/bdaddress
 
 # Camera
