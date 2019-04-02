@@ -1333,7 +1333,7 @@ Return<void> RadioImpl::setNetworkSelectionModeAutomatic(int32_t serial) {
 #if VDBG
     RLOGD("setNetworkSelectionModeAutomatic: serial %d", serial);
 #endif
-    dispatchStrings(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC, 0);
+    dispatchVoid(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_AUTOMATIC);
     return Void();
 }
 
@@ -1342,8 +1342,8 @@ Return<void> RadioImpl::setNetworkSelectionModeManual(int32_t serial,
 #if VDBG
     RLOGD("setNetworkSelectionModeManual: serial %d", serial);
 #endif
-    dispatchStrings(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL,
-            1, operatorNumeric.c_str());
+    dispatchString(serial, mSlotId, RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL,
+            operatorNumeric.c_str());
 
     /**
       * Qualcomm's RIL doesn't seem to issue any callbacks for opcode 47
