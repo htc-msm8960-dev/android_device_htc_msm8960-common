@@ -489,24 +489,6 @@ struct OemHookImpl : public IOemHook {
             const ::android::hardware::hidl_vec<::android::hardware::hidl_string>& data);
 };
 
-/*
- * The Qualcomm's libril-qc-qmi-1.so version used for fusion3 expects an
- * additional field containing the subaddress after the the usual RIL_Dial
- * structure for RIL_REQUEST_DIAL.  Note that the data length passed to the
- * onRequest function must include this extra field, otherwise the buffer
- * allocated by the library will be too small, and then attempts to access
- * the subaddress field will result in broken outgoing calls.
- */
-typedef struct {
-    /* Fields from RIL_Dial */
-    char *address;
-    int clir;
-    RIL_UUS_Info *uusInfo;
-
-    /* Extra field used by libril-qc-qmi-1.so */
-    char *subaddress;
-} QCRIL_Dial;
-
 void memsetAndFreeStrings(int numPointers, ...) {
     va_list ap;
     va_start(ap, numPointers);
@@ -948,9 +930,9 @@ Return<void> RadioImpl::dial(int32_t serial, const Dial& dialInfo) {
     if (pRI == NULL) {
         return Void();
     }
-    QCRIL_Dial dial = {};
+    RIL_Dial dial = {};
     RIL_UUS_Info uusInfo = {};
-    int32_t sizeOfDial = sizeof(RIL_Dial);
+    int32_t sizeOfDial = sizeof(dial);
 
     if (!copyHidlStringToRil(&dial.address, dialInfo.address, pRI)) {
         return Void();
