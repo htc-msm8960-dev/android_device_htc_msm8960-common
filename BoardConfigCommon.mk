@@ -28,6 +28,8 @@ PLATFORM_PATH := device/htc/msm8960-common
 
 BOARD_VENDOR := htc
 
+TARGET_SPECIFIC_HEADER_PATH += device/htc/msm8960-common/include
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 TARGET_NO_BOOTLOADER := true
@@ -52,6 +54,8 @@ AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
+BOARD_HAVE_HTC_CSDCLIENT := true
+USE_CUSTOM_AUDIO_POLICY := 1
 
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
@@ -66,6 +70,39 @@ BOARD_HAVE_BLUETOOTH := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_USES_MEDIA_EXTENSIONS := true
+TARGET_USES_NON_TREBLE_CAMERA := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := camera_parameters_htc_msm8960
+
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/mm-qcamera-daemon=21 \
+    /system/bin/qseecomd=21 \
+    /system/vendor/bin/hw/android.hardware.sensors@1.0-service.htc8960=21 \
+    /system/vendor/bin/hw/android.hardware.media.omx@1.0-service=21 \
+    /system/vendor/bin/hw/rild=27 \
+    /system/bin/audioserver=21
+
+# Charge mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+
+# Graphics
+HAVE_ADRENO_SOURCE := false
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+    endif
+  endif
+endif
+
+# Extended Filesystem Support
+TARGET_EXFAT_DRIVER := sdfat
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
@@ -80,15 +117,27 @@ SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000U
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
+HAVE_ADRENO_SOURCE := false
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# GPS
+USE_DEVICE_SPECIFIC_GPS := true
 
 # GCC
 TARGET_NEEDS_GCC_LIBC := true
 
 # HIDL
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+
+# Keymaster
+TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Network Routing
+TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
 # Power
 TARGET_HAS_LEGACY_POWER_STATS := true
@@ -97,6 +146,17 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # Radio
 TARGET_USES_OLD_MNC_FORMAT := true
+BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
+
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/bin/mpdecision|libshims_atomic.so \
+    /system/vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so \
+    /system/lib/liblog.so|liblog_shim.so \
+    /system/vendor/lib/libril.so|libshims_ril.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libshims_ril.so \
+    /system/lib/libril-qc-qmi-1.so|libshims_ril.so \
+    /system/vendor/lib/libqc-opt.so|libshim_qcopt.so
