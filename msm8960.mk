@@ -71,7 +71,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
-    Footej \
+    Snap \
     libcamera_shim
 
 # Camera External Config
