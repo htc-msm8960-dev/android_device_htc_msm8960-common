@@ -25,7 +25,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1 \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true \
-    camera.disable_treble=true
+    camera.disable_treble=true \
+    debug.camcorder.disablemeta=true
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
