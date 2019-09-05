@@ -235,6 +235,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     libwpa_client 
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
 # Voice processing
 PRODUCT_PACKAGES += \
     libqcomvoiceprocessing
