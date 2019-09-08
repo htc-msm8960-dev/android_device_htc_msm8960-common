@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_amplifier.msm8960 \
+#    audio_amplifier.msm8960 \
     audio.primary.msm8960 \
     audio.r_submix.default \
     audio.usb.default \
@@ -203,8 +203,8 @@ PRODUCT_PACKAGES += \
 
 # Perf
 PRODUCT_PACKAGES += \
-    libshims_atomic \
-    libshim_qcopt
+    libshims_atomic
+#    libshim_qcopt
 
 # Sensors HIDL interfaces
 PRODUCT_PACKAGES += \
@@ -225,8 +225,8 @@ PRODUCT_PACKAGES += \
     libshims_ril \
     qti-telephony-common
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+#PRODUCT_BOOT_JARS += \
+#    telephony-ext
 
 # Lineage hardware
 PRODUCT_PACKAGES += \
