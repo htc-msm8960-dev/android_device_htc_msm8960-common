@@ -87,6 +87,8 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
+WITH_LINEAGE_CHARGER := false
+
 # Graphics
 HAVE_ADRENO_SOURCE := false
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
