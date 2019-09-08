@@ -45,6 +45,8 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 
+BUILD_BROKEN_DUP_RULES := true
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
