@@ -80,7 +80,7 @@ LOCAL_SRC_FILES := \
     icu53.cpp \
     libqc-opt_shim.c
 
-LOCAL_SHARED_LIBRARIES := libicuuc libicui18n liblog
+LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := libshim_qcopt
 LOCAL_MODULE_TAGS := optional
 
