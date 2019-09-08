@@ -159,4 +159,5 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libril.so|libshims_ril.so \
     /system/vendor/lib/libril-qc-qmi-1.so|libshims_ril.so \
     /system/lib/libril-qc-qmi-1.so|libshims_ril.so \
-    /system/vendor/lib/libqc-opt.so|libshim_qcopt.so
+    /system/vendor/lib/libqc-opt.so|libshim_qcopt.so \
+    /system/lib/libui.so|libui_shim.so

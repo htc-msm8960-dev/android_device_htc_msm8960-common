@@ -85,3 +85,14 @@ LOCAL_MODULE := libshim_qcopt
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    GraphicBuffer.cpp
+
+LOCAL_SHARED_LIBRARIES := libui
+LOCAL_MODULE := libui_shim
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)

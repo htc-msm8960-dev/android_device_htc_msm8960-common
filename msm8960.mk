@@ -247,6 +247,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     libwpa_client 
 
+# GUI Shims
+PRODUCT_PACKAGES += \
+    libui_shim
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
