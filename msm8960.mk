@@ -210,10 +210,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.htc8960 \
     android.hardware.sensors@1.0-service.htc8960
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
-
 # USB HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic \
