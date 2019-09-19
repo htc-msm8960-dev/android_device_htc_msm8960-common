@@ -212,7 +212,6 @@ PRODUCT_PACKAGES += \
 # Perf
 PRODUCT_PACKAGES += \
     libshims_atomic
-#    libshim_qcopt
 
 # Sensors HIDL interfaces
 PRODUCT_PACKAGES += \
