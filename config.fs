@@ -10,6 +10,12 @@ value:2951
 [AID_VENDOR_RFS_SHARED]
 value:2952
 
+[/system/bin/mm-qcamera-daemon]
+mode: 0700
+user: AID_CAMERA
+group: AID_SHELL
+caps: SYS_NICE
+
 [firmware/]
 mode: 0771
 user: AID_SYSTEM
