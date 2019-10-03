@@ -33,12 +33,12 @@
 
 extern "C" {
 
-extern uint32_t android_get_application_target_sdk_version();
+extern int android_get_application_target_sdk_version();
 extern void android_set_application_target_sdk_version(uint32_t target);
 
-int Pthread_kill(pthread_t t, int sig) {
-	android_set_application_target_sdk_version(__ANDROID_API_N_MR1__);
-	return pthread_kill(t, sig);
-}
+    int Pthread_kill(pthread_t t, int sig) {
+        android_set_application_target_sdk_version(__ANDROID_API_N_MR1__);
+        return pthread_kill(t, sig);
+    }
 
 }
