@@ -237,7 +237,7 @@ PRODUCT_PACKAGES += \
 
 # WiFi HIDL interfaces
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
+    android.hardware.wifi@1.0-service.legacy
 
 # WiFi
 PRODUCT_PACKAGES += \
