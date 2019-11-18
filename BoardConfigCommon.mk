@@ -150,6 +150,7 @@ BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
 TARGET_RECOVERY_DEVICE_MODULES += chargeled
+LZMA_RAMDISK_TARGETS := recovery
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
