@@ -64,6 +64,9 @@ USE_CUSTOM_AUDIO_POLICY := 1
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# LMKD stats logging
+TARGET_LMKD_STATS_LOG := true
+
 # Bionic
 TARGET_ALLOWS_INVALID_PTHREAD := true
 
