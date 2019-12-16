@@ -75,6 +75,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.nfc.se=true \
     ro.nfc.port=I2C
 
+# OMX
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0
