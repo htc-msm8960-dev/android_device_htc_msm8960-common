@@ -21,7 +21,7 @@ LOCAL_SRC_FILES := chargeled.c
 
 LOCAL_CFLAGS += -Wall
 
-LOCAL_STATIC_LIBRARIES := libc liblog libcutils
+LOCAL_STATIC_LIBRARIES := libbase libc liblog libcutils
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 LOCAL_MODULE := chargeled
