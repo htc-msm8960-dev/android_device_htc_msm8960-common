@@ -124,8 +124,8 @@ PRODUCT_PACKAGES += \
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl.htc_msm8960 \
-    android.hardware.gnss@1.0-service.htc_msm8960
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # Health
 PRODUCT_PACKAGES += \
