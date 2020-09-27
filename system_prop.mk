@@ -29,6 +29,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_treble=true \
     debug.camcorder.disablemeta=true
 
+# Disable traced and iorapd
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.iorapd.enable=false \
+	persist.traced.enable=0
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=dyn \
