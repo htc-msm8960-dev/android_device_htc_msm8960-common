@@ -151,7 +151,8 @@ PRODUCT_PACKAGES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     keystore.msm8960 \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.gatekeeper@1.0-service.software
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
