@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
-
 # Dalvik vm configs
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
