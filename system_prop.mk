@@ -46,10 +46,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_buffer_age=false \
     ro.opengles.version=196608
 
-# fastbootd
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fastbootd.available=true
-
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.set_privacy=1
