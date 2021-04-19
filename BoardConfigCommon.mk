@@ -134,9 +134,6 @@ TARGET_NO_ADAPTIVE_PLAYBACK := true
 # memfd
 TARGET_HAS_MEMFD_BACKPORT := true
 
-# Memory
-MALLOC_SVELTE := true
-
 # Network Routing
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
