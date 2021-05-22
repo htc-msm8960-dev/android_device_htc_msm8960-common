@@ -158,3 +158,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libril-qc-qmi-1.so|libshims_ril.so \
     /system/lib/libril-qc-qmi-1.so|libshims_ril.so \
     /system/lib/libui.so|libui_shim.so
+
+# Tweaks for 'low ram' devices
+-include device/htc/msm8960-common/lowram/BoardConfig.mk
