@@ -14,8 +14,7 @@
 # limitations under the License.
 #
 
-# Tweaks for 'low ram' devices
-$(call inherit-product-if-exists, $(LOCAL_PATH)/lowram/device.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
 
 # Dalvik vm configs
 PRODUCT_PROPERTY_OVERRIDES += \
