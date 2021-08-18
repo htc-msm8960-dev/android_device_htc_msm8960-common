@@ -268,10 +268,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
-# WiFi HIDL interfaces
-PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
-
 # WiFi
 PRODUCT_PACKAGES += \
     hostapd \
