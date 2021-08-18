@@ -283,7 +283,3 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
-
-# Voice processing
-PRODUCT_PACKAGES += \
-    libqcomvoiceprocessing
