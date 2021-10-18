@@ -78,6 +78,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=0
 
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
 # Thermal
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.thermal.monitor=true
